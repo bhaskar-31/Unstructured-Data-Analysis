@@ -5,3 +5,4 @@ speechrecognition
 pydub
 numpy
 pandas
+textblob
