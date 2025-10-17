@@ -309,6 +309,22 @@ import matplotlib.pyplot as plt
 import nltk
 import random
 import nltk
+from textblob import TextBlob
+
+# List of required corpora for TextBlob
+required_corpora = [
+    ('punkt', 'tokenizers/punkt'),
+    ('averaged_perceptron_tagger', 'taggers/averaged_perceptron_tagger'),
+    ('wordnet', 'corpora/wordnet')
+]
+
+# Download corpora if missing
+for corpus_name, path in required_corpora:
+    try:
+        nltk.data.find(path)
+    except LookupError:
+        nltk.download(corpus_name)
+
 
 # Download required NLTK corpora for TextBlob
 required_corpora = [
