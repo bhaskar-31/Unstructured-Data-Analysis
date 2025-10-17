@@ -1,1 +1,7 @@
 gtts
+streamlit
+gtts
+speechrecognition
+pydub
+numpy
+pandas
