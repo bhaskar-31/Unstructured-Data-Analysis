@@ -308,6 +308,25 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import nltk
 import random
+import nltk
+
+# Download required NLTK corpora for TextBlob
+required_corpora = [
+    ('punkt', 'tokenizers/punkt'),
+    ('averaged_perceptron_tagger', 'taggers/averaged_perceptron_tagger'),
+    ('wordnet', 'corpora/wordnet')
+]
+
+for corpus_name, path in required_corpora:
+    try:
+        nltk.data.find(path)
+    except LookupError:
+        nltk.download(corpus_name)
+from textblob import TextBlob
+
+blob = TextBlob("Your text here")
+words_and_tags = blob.tags  # This will now work
+
 
 
 st.title("🧠 Unstructured Data Analysis")
