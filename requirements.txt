@@ -6,3 +6,4 @@ pydub
 numpy
 pandas
 textblob
+wordcloud
